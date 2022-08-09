@@ -1,0 +1,6 @@
+Psycopg2
+Pyshorteners
+Datetime
+Requests
+smtplib
+EmailMessage
