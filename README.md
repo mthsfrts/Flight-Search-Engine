@@ -59,7 +59,7 @@ https://cloud.google.com/sql/docs/mysql/connect-admin-proxy
 ---
 ## **_Other :_**
 
-If you have any comment or idea to increment on the engine feel free to reach out!
+If you have any comment or idea to increment on the engine fell free to reach out!
 
 The **_'V.2'_** will probably take a machine learn or AI approach to make some advanced features, 
 like price prediction for periods, cabin price prediction and a skipping-leg feature.

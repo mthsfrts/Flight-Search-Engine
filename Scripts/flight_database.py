@@ -10,9 +10,9 @@ class FlightsDatabase:
 
         self.conn = psycopg2.connect(
             host="localhost",
-            user="matheus",
-            password="Aurora",
-            dbname='routes',
+            user="Your User",
+            password="Your Password",
+            dbname="Your Db",
             port=5432
         )
         self.cur = self.conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
