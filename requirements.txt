@@ -1,6 +1,2 @@
-Psycopg2
-Pyshorteners
-Datetime
-Requests
-smtplib
-EmailMessage
+psycopg2-binary
+pyshorteners
