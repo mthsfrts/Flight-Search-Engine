@@ -17,7 +17,7 @@ future reference, and will use the Kiwi API to query all the search and look-ups
 
 * _SMTPLIB (python native)_
 
-* _EmailMessage (python native)_
+* _Email.message (python native)_
 
 * _Pyshorteners (URL Shortener - third part)_
 
