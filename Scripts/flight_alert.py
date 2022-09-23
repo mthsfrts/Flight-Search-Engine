@@ -2,6 +2,7 @@
 import smtplib
 from email.message import EmailMessage
 from OAuth_Google import OAuth
+from main import client_email
 
 # Auth Object
 
@@ -17,7 +18,7 @@ class FlightAlert:
 
         # Variables
         sender = 'flightdeals.espresso@gmail.com'
-        receiver = 'matheus.britto@gmail.com'
+        receiver = f'{client_email}'
 
         # Alert
         alert = EmailMessage()

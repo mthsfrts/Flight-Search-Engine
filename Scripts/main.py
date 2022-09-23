@@ -14,8 +14,8 @@ fdb = FlightsDatabase()
 tomorrow = datetime.now() + timedelta(days=1)
 two_years_from_today = datetime.now() + timedelta(days=(24 * 30))
 
-# Set up Script
 
+# Set up Script
 origin_city = str.title('fortaleza')
 origin_code = fs.location_code(f'{origin_city}')
 begin_date = tomorrow.date()
@@ -27,8 +27,10 @@ adults = 2
 kids = 1
 baby = 1
 
-# Setting up the Search Prices
+client_email = input("Please tell me your email, so I can send you the deals!")
 
+
+# Setting up the Search Prices
 ECONOMY_PRICE_COMPARE: int = 10000
 BUSINESS_PRICE_COMPARE: int = 15000
 
@@ -37,7 +39,6 @@ routes = fdb.getting_data('destination')
 
 
 # Return Messages Methods
-
 def send_alert(attribute_economy_business, short_url, dest_code):
     """This Method is responsible for mount the Email Message"""
 
@@ -80,7 +81,6 @@ def terminal_return(attribute_economy_business, origin, dest, price):
 
 
 # Main Loop
-
 def flight_deals():
     """This Class is responsible for getting the cheapest flight every hour"""
 
