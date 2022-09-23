@@ -73,8 +73,8 @@ def send_alert(attribute_economy_business, short_url, dest_code):
         f"(Class : {cabin_name[attribute_economy_business.cabin_departure]})"), message=message)
 
 
-def terminal_return(origin, dest, price):
-    print('Business Flight Found'
+def terminal_return(attribute_economy_business, origin, dest, price):
+    print(f'{attribute_economy_business} Flight Found'
           f"\nLow price alert!!!! {origin} - {dest} "
           f"\nPrice: {price} R$")
 
@@ -101,6 +101,7 @@ def flight_deals():
                                   baby,
                                   cabin
                                   )
+
             economy = fs.flights(origin_code,
                                  city['iata'],
                                  begin_date,
@@ -121,10 +122,9 @@ def flight_deals():
                     short_url = shortener.tinyurl.short(business.url)
 
                     # Terminal Return
-                    terminal_return(origin_code, dest_code, business.price)
+                    terminal_return(business, origin_code, dest_code, business.price)
 
                     # Insert Flight Details
-
                     fdb.insert_details(business.departure_date, business.return_date,
                                        cabin_name[business.cabin_departure], business.seat, business.departure_number,
                                        business.return_number, business.total_days, business.price, short_url, dest_id)
@@ -142,7 +142,12 @@ def flight_deals():
                     short_url = shortener.tinyurl.short(economy.url)
 
                     # Terminal Return
-                    terminal_return(origin_code, dest_code, economy.price)
+                    terminal_return(economy, origin_code, dest_code, economy.price)
+
+                    # Insert Flight Details
+                    fdb.insert_details(economy.departure_date, economy.return_date,
+                                       cabin_name[business.cabin_departure], economy.seat, economy.departure_number,
+                                       economy.return_number, economy.total_days, economy.price, short_url, dest_id)
 
                     # Email Message
                     send_alert(economy, short_url, dest_code)
